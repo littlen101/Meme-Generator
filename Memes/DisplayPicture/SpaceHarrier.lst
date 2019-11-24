@@ -1,0 +1,37 @@
+mads 1.9.2 build 21 (21 Jan 11)
+Source: C:\jac\system\Atari800\Programming\2011\DisplayPicture\SpaceHarrier.asm
+     1 				;
+     2 				;	>>> Simple picture display in assembler <<<
+     3 				;
+     4 				;	2011-09-16 by JAC! 
+     5
+     6
+     7 					org $2000
+     8
+     9 FFFF> 2000-20E2> A9 1C + start	mwa #dl $230		;Set DL points
+    10 200A A9 34 8D C4 02		mva #$34 708		;Set 3 colors
+    11 200F A9 38 8D C5 02		mva #$38 709
+    12 2014 A9 0E 8D C6 02		mva #$0e 710
+    13 2019 4C 19 20			jmp *
+    14
+    15 201C			dl	.local
+    16 = 000E			dc	= $0e			;Antic mode E/graphics 15
+    17 					
+    18 201C 70 70 70			.byte $70,$70,$70	;3*8=24 blank lines in PAL
+    19
+    20 201F 4E				.byte $40+dc		;LMS instruction for upper half
+    21 2020 00 21			.word picture
+    22 2022 0E 0E 0E 0E 0E 0E + :95	.byte dc		;1+95=96 lines, 40 bytes each
+    23
+    24 2081 4E				.byte $40+dc		;LMS instruction for upper half
+    25 2082 00 30			.word picture+$f00	;Will be at 4k boundary
+    26 2084 0E 0E 0E 0E 0E 0E + :95	.byte dc		;1+95=96 lines, 40 bytes each
+    27
+    28 					.endl
+    29
+    30 					;Picture has $1e00 bytes, $f00 for the upper half, $f00 for the lower half
+    31 					;In order to prevent ANTIC from cross a 4k boundary, we chose the base address
+    32 					;in a way that the upper half is in the first 4k, and the lower half in 2nd 4k.
+    33 				 
+    34 20E3				org $2100
+    35 2100-3EFF> 00 00 00 00 + picture	ins "SpaceHarrier.pic"
