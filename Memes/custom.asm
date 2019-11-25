@@ -6,27 +6,27 @@ INCLUDE valid.inc
 
 
 custom PROC,
-topText : PTR BYTE,
-	bottomText : PTR BYTE
+	firstText : PTR BYTE,
+	secondText : PTR BYTE
 
 	pushad
 	
 
-	mov edx, topText
+	mov edx, firstText
 	call WriteString
-	mov edx, OFFSET topIn
+	mov edx, OFFSET firstIn
 	mov ecx, 30
 	call ReadString
 
-	mov edx, bottomText
+	mov edx, secondText
 	call WriteString
-	mov edx, OFFSET botIn
+	mov edx, OFFSET secondIn
 	mov ecx, 30
 	call ReadString
 
 
-	call Clrscr;				PRINT MEME
-	mov edx, OFFSET topIn
+	call Clrscr;				PRINT MEME  Expand to include different templates
+	mov edx, OFFSET firstIn
 	
 	call WriteString
 	call Crlf
@@ -34,7 +34,7 @@ topText : PTR BYTE,
 	
 	call WriteString
 	call Crlf
-	mov edx, OFFSET botIn
+	mov edx, OFFSET secondIn
 	
 	call WriteString
 	

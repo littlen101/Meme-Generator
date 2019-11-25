@@ -6,8 +6,8 @@ picOne BYTE "THIS IS WHERE I WOULD PUT THE PICTURE, IF I HAD ONE", 0
 
 
 
-topIn BYTE 31 DUP (?)
-botIn BYTE 31 DUP (?)
+firstIn BYTE 31 DUP (?)
+secondIn BYTE 31 DUP (?)
 
 
 

@@ -8,34 +8,27 @@ INCLUDE valid.inc
 
 .code
 
-selectCaption PROC,
-ptrSelect:PTR BYTE,ptrInvalidC : PTR BYTE
+selectCaption PROC,ptrInvalidC : PTR BYTE
 
 	push ecx
 	push esi
 	push edx
-	mov edx,ptrSelect
-	call WriteString
-	
-	
 
-	readC : call ReadDec
+readC : call ReadDec
 	CMP eax, 10; Max number of inputs
-	ja badInputC
+	jae badInputC
 	CMP eax, 0; Minimum number of inputs
-	jbe badInputC
-	jno goodInputC
-	badInputC :
-mov edx, ptrInvalidC
-call WriteString
-jmp  readC
+	jb badInputC
 goodInputC :
-
-
 	pop edx
 	pop esi
 	pop ecx
 	ret
+badInputC :
+	mov edx, ptrInvalidC
+	call WriteString
+	jmp  readC
+
 selectCaption endp
 
 
@@ -60,24 +53,24 @@ read : call ReadInt
 	ja badInput
 	CMP eax, 0; Minimum number of inputs +1
 	jbe badInput
-	jno goodInput
+goodInput :
+	pop edx
+	pop esi
+	pop ecx
+	ret
 badInput :
 	mov edx,ptrInvalid
 	call WriteString
 	jmp  read
-goodInput :
-	pop edx
-		pop esi
-		pop ecx
-		ret
-		promptMode endp
+promptMode endp
 
 
 
 
-		selectP PROC, ; Select Photo
-ptrPic : PTR BYTE,
-ptrInvalidP : PTR BYTE
+selectP PROC, ; Select Photo
+	ptrPic : PTR BYTE,
+	ptrInvalidP : PTR BYTE
+
 	push ecx
 	push esi
 	push edx
@@ -90,21 +83,18 @@ ptrInvalidP : PTR BYTE
 	CMP eax, 10; Max number of inputs
 	ja badInputP
 	CMP eax, 0; Minimum number of inputs
-	jbe badInputP
-	jno goodInputP
-
-	badInputP :
-mov edx, ptrInvalidP
-call WriteString
-jmp  readP
+	jb badInputP
 
 goodInputP:
-
 	pop edx
 	pop esi
 	pop ecx
 	ret
-	selectP endp
+badInputP :
+	mov edx, ptrInvalidP
+	call WriteString
+	jmp  readP
+selectP endp
 
 
 END
