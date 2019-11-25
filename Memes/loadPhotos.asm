@@ -1,5 +1,3 @@
-.386
-.model flat, STDCALL
 INCLUDE valid.inc
 
 .data

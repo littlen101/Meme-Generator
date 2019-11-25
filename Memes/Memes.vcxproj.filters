@@ -21,6 +21,18 @@
     <MASM Include="Main.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="custom.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="loadPhotos.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="Random.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="Premade.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
   <ItemGroup>
     <None Include="valid.inc">
@@ -29,5 +41,10 @@
     <None Include="..\..\..\..\..\..\..\..\Irvine\Irvine32.inc">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\..\..\..\..\..\Irvine\Irvine32.lib">
+      <Filter>Resource Files</Filter>
+    </Library>
   </ItemGroup>
 </Project>

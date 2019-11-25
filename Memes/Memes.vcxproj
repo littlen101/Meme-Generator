@@ -81,6 +81,9 @@
     <Link>
       <SubSystem>Console</SubSystem>
     </Link>
+    <MASM>
+      <IncludePaths>C:/Irvine;%(IncludePaths)</IncludePaths>
+    </MASM>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -124,12 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <MASM Include="custom.asm">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </MASM>
     <MASM Include="inputValidation.asm" />
+    <MASM Include="loadPhotos.asm" />
     <MASM Include="Main.asm" />
+    <MASM Include="Premade.asm" />
+    <MASM Include="Random.asm" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\..\..\..\..\..\..\Irvine\Irvine32.inc" />
     <None Include="valid.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\..\..\..\..\..\..\Irvine\Irvine32.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
