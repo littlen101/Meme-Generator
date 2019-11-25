@@ -53,7 +53,7 @@ premade PROC,
 	mov ecx, DWORD PTR captionListLength
 
 	PrintCaption:
-		mov ebx, DWORD PTR (captionSize * esi)
+		;mov ebx, DWORD PTR (captionSize * esi)
 		mov edx, DWORD PTR captionList[ebx]
 		call WriteString
 		call Crlf
@@ -71,15 +71,15 @@ premade PROC,
 	; Print MEME
 	t1: ;Template 1
 	call Clrscr
-	mov edx, OFFSET (captionList[captionSize * firstCaption])
+	;mov edx, OFFSET (captionList[captionSize * firstCaption])
 	call WriteString
 	call Crlf
 
-	mov edx, OFFSET (captionList[captionSize * secondCaption])
+	;mov edx, OFFSET (captionList[captionSize * secondCaption])
 	call WriteString
 	call Crlf
 
-	mov edx, OFFSET picOne
+	;mov edx, OFFSET picOne
 	call WriteString
 	call Crlf
 

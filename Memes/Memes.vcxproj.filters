@@ -24,13 +24,13 @@
     <MASM Include="custom.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="loadPhotos.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
     <MASM Include="Random.asm">
       <Filter>Source Files</Filter>
     </MASM>
     <MASM Include="Premade.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="loadPhotos.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>

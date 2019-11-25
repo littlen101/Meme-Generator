@@ -27,18 +27,19 @@ custom PROC,
 
 	call Clrscr;				PRINT MEME  Expand to include different templates
 	mov edx, OFFSET firstIn
-	
 	call WriteString
 	call Crlf
-	mov edx, OFFSET picOne
-	
-	call WriteString
-	call Crlf
+
 	mov edx, OFFSET secondIn
-	
 	call WriteString
-	
 	call Crlf
+
+	mov edx, OFFSET picOne
+	call WriteString
+	call Crlf
+
+	
+
 	call WaitMsg
 	call Crlf
 
