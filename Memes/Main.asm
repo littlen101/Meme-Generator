@@ -11,7 +11,7 @@ firstText BYTE "Enter the first text of your meme: ",0
 secondText BYTE "Enter the second text of your meme: ",0
 firstTextChoose BYTE "Choose the first text of your meme: ",0
 secondTextChoose BYTE "Choose the second text of your meme: ",0
-selectTemplate BYTE "Please choose a template for your meme",0
+selectTemplate BYTE "Please choose a template for your meme: #1 t,t,p  #2 t,p,t  #3 p,t,t",0
 
 picNum dword ? 
 

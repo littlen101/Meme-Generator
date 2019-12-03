@@ -14,11 +14,12 @@ premade PROTO,
 chooseTemplate : PTR BYTE,
 promptBad : PTR BYTE,
 
-
+selectTemplate PROTO,invalidT:PTR BYTE
 custom PROTO,
 firstText:PTR BYTE,
 secondText : PTR BYTE
 
-selectCaption PROTO,ptrInvalidC:PTR BYTE
+selectCaption PROTO,ptrInvalidC:PTR BYTE
+
 promptMode PROTO,
 ptrPrompt:PTR BYTE,ptrInvalid:PTR BYTE

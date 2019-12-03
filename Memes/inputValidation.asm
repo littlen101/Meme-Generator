@@ -14,7 +14,7 @@ selectCaption PROC,ptrInvalidC : PTR BYTE
 	push esi
 	push edx
 
-readC : call ReadDec
+readC : call ReadInt
 	CMP eax, 10; Max number of inputs
 	jae badInputC
 	CMP eax, 0; Minimum number of inputs
@@ -31,7 +31,28 @@ badInputC :
 
 selectCaption endp
 
+selectTemplate PROC,invalidT : PTR BYTE
 
+	push ecx
+	push esi
+	push edx
+
+readT: call ReadInt
+	CMP eax, 4; Max number of inputs
+	jae badInputT
+	CMP eax, 1; Minimum number of inputs
+	jb badInputT
+goodInputT :
+	pop edx
+	pop esi
+	pop ecx
+	ret
+badInputT :
+	mov edx, invalidT
+	call WriteString
+	jmp  readT
+
+selectTemplate endp
 
 
 promptMode PROC,
