@@ -1,7 +1,9 @@
 INCLUDE Irvine32.inc
 selectP PROTO,ptrPic:PTR BYTE,ptrInvalidP:PTR BYTE
 
-EXTERNDEF picOne:BYTE ;Copy this for all Pictures
+EXTERNDEF memeList:BYTE ; List of memes
+
+EXTERNDEF captionListLength:BYTE ; Number of Captions Avaliable 
 
 
 

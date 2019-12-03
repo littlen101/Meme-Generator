@@ -6,12 +6,12 @@ startup BYTE "Welcome to the meme creator", 0Dh, 0Ah,"You can choose between ran
 inPrompt BYTE "Please select a creation mode (1-3): ", 0
 promptBad BYTE "Invalid input, please enter again: ", 0
 capSel BYTE "Select a caption:", 0
-picSel BYTE "Select a picture (1-#):", 0
+picSel BYTE "Select a picture (0-10):", 0
 firstText BYTE "Enter the first text of your meme: ",0
 secondText BYTE "Enter the second text of your meme: ",0
 firstTextChoose BYTE "Choose the first text of your meme: ",0
 secondTextChoose BYTE "Choose the second text of your meme: ",0
-selectTemplate BYTE "Please choose a template for your meme: #1 t,t,p  #2 t,p,t  #3 p,t,t",0
+selectTemplatePrompt BYTE "Please choose a template for your meme: #1 t,t,p  #2 t,p,t  #3 p,t,t",0
 
 picNum dword ? 
 
@@ -50,7 +50,7 @@ mode1:
 jmp promptAgain
 mode2:
 	INVOKE selectP, ADDR picSel, ADDR promptBad
-	INVOKE premade, ADDR selectTemplate, ADDR promptBad
+	INVOKE premade, ADDR selectTemplatePrompt, ADDR promptBad
 ;some code
 jmp promptAgain
 mode3:

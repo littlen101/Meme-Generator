@@ -90,7 +90,7 @@ premade PROC,
 	call WriteString
 	call Crlf
 
-	mov edx, OFFSET picOne
+	mov edx, OFFSET memeList
 	call WriteString
 	call Crlf
 
@@ -108,7 +108,7 @@ premade PROC,
 	call WriteString
 	call Crlf
 
-	mov edx, OFFSET picOne
+	mov edx, OFFSET memeList
 	call WriteString
 	call Crlf
 
@@ -124,7 +124,7 @@ premade PROC,
 
 	t3: ;Template 3
 	call Clrscr
-	mov edx, OFFSET picOne
+	mov edx, OFFSET memeList
 	call WriteString
 	call Crlf
 

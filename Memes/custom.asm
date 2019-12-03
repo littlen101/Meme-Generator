@@ -34,7 +34,7 @@ custom PROC,
 	call WriteString
 	call Crlf
 
-	mov edx, OFFSET picOne
+	mov edx, OFFSET memeList
 	call WriteString
 	call Crlf
 
